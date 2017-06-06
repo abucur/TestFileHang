@@ -3,6 +3,7 @@
 
 using namespace concurrency;
 using namespace Windows::Storage;
+using namespace Windows::Storage::Streams;
 using namespace Windows::UI::Core;
 
 FileProcessor::FileProcessor(Platform::String^ fileName)
@@ -33,9 +34,25 @@ void FileProcessor::Start()
 		{
 			try {
 				create_task(KnownFolders::DocumentsLibrary->CreateFileAsync(m_fileName, CreationCollisionOption::ReplaceExisting)).then([this](StorageFile^ file) {
-					return create_task(ApplicationData::Current->TemporaryFolder->CreateFileAsync(m_fileName, CreationCollisionOption::ReplaceExisting)).then([file, this](StorageFile^ tempFile) {
-						return create_task(FileIO::WriteTextAsync(tempFile, m_fileName)).then([file, this, tempFile] {
-							return tempFile->MoveAndReplaceAsync(file);
+					return create_task(file->OpenSequentialReadAsync()).then([](task<IInputStream^> dumbStreamTask) {
+						try {
+							auto dumbStream = dumbStreamTask.get();
+						}
+						catch (...) {
+							throw;
+						}
+					}).then([file, this] {
+						return create_task(file->OpenTransactedWriteAsync()).then([this](StorageStreamTransaction^ transaction) {
+							DataWriter^ writer = ref new DataWriter(transaction->Stream);
+							writer->WriteString(m_fileName);
+							return create_task(writer->StoreAsync()).then([writer, transaction](unsigned long long size) {
+								transaction->Stream->Size = size;
+								return writer->FlushAsync();
+							}).then([transaction, writer](bool success) {
+								return transaction->CommitAsync();
+							}).then([transaction] {
+								delete transaction;
+							});
 						});
 					});
 				}).get();
