@@ -14,6 +14,8 @@
         <TextBlock x:Name="CountThread4" HorizontalAlignment="Left" Margin="10,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread5" HorizontalAlignment="Left" Margin="10,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread6" HorizontalAlignment="Left" Margin="10,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountThread7" HorizontalAlignment="Left" Margin="10,197,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountThread8" HorizontalAlignment="Left" Margin="10,222,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
         <TextBlock x:Name="CountException1" HorizontalAlignment="Left" Margin="200,47,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountException2" HorizontalAlignment="Left" Margin="200,72,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
@@ -21,6 +23,8 @@
         <TextBlock x:Name="CountException4" HorizontalAlignment="Left" Margin="200,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountException5" HorizontalAlignment="Left" Margin="200,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountException6" HorizontalAlignment="Left" Margin="200,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException7" HorizontalAlignment="Left" Margin="200,197,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException8" HorizontalAlignment="Left" Margin="200,222,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

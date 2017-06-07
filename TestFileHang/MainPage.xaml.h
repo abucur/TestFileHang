@@ -29,5 +29,7 @@ namespace TestFileHang
 		FileProcessor^ m_processor4;
 		FileProcessor^ m_processor5;
 		FileProcessor^ m_processor6;
+        FileProcessor^ m_processor7;
+        FileProcessor^ m_processor8;
 	};
 }

@@ -44,6 +44,12 @@ MainPage::MainPage()
 
 	m_processor6 = ref new FileProcessor("Test6.hang");
 	BindProcessor(m_processor6, CountThread6, CountException6);
+
+    m_processor7 = ref new FileProcessor("Test7.hang");
+    BindProcessor(m_processor7, CountThread7, CountException7);
+
+    m_processor8 = ref new FileProcessor("Test8.hang");
+    BindProcessor(m_processor8, CountThread8, CountException8);
 }
 
 void TestFileHang::MainPage::BindProcessor(FileProcessor^ processor, Windows::UI::Xaml::Controls::TextBlock^ block
@@ -78,4 +84,6 @@ void TestFileHang::MainPage::Page_Loaded(Platform::Object^ sender, Windows::UI::
 	m_processor4->Start();
 	m_processor5->Start();
 	m_processor6->Start();
+    m_processor7->Start();
+    m_processor8->Start();
 }
