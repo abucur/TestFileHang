@@ -28,46 +28,46 @@ MainPage::MainPage()
 	InitializeComponent();
 
 	m_processor1 = ref new FileProcessor("Test1.hang");
-	BindProcessor(m_processor1, CountThread1);
+	BindProcessor(m_processor1, CountThread1, CountException1);
 
 	m_processor2 = ref new FileProcessor("Test2.hang");
-	BindProcessor(m_processor2, CountThread2);
+	BindProcessor(m_processor2, CountThread2, CountException2);
 
 	m_processor3 = ref new FileProcessor("Test3.hang");
-	BindProcessor(m_processor3, CountThread3);
+	BindProcessor(m_processor3, CountThread3, CountException3);
 
 	m_processor4 = ref new FileProcessor("Test4.hang");
-	BindProcessor(m_processor4, CountThread4);
+	BindProcessor(m_processor4, CountThread4, CountException4);
 
 	m_processor5 = ref new FileProcessor("Test5.hang");
-	BindProcessor(m_processor5, CountThread5);
+	BindProcessor(m_processor5, CountThread5, CountException5);
 
 	m_processor6 = ref new FileProcessor("Test6.hang");
-	BindProcessor(m_processor6, CountThread6);
+	BindProcessor(m_processor6, CountThread6, CountException6);
 }
 
-
-void TestFileHang::MainPage::StartButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-
-}
-
-void TestFileHang::MainPage::BindProcessor(FileProcessor^ processor, Windows::UI::Xaml::Controls::TextBlock^ block)
+void TestFileHang::MainPage::BindProcessor(FileProcessor^ processor, Windows::UI::Xaml::Controls::TextBlock^ block
+	, Windows::UI::Xaml::Controls::TextBlock^ exceptionBlock)
 {
 	WeakReference weakSelf(this);
 
 	std::shared_ptr<int> counter = std::make_shared<int>(0);
-	processor->FileCreated += ref new Windows::Foundation::EventHandler<Platform::Object^>([weakSelf, counter, block](Platform::Object^ sender, Platform::Object^) {
-		auto self = weakSelf.Resolve<TestFileHang::MainPage>();
-
-		int currentCount = (*counter)++;
-		Platform::String^ newText = L"Count " + currentCount;
+	processor->FileCreated += ref new Windows::Foundation::EventHandler<Platform::Object^>([counter, block](Platform::Object^ sender, Platform::Object^) {
+		int currentCount = ++(*counter);
+		Platform::String^ newText = L"Success " + currentCount;
 		block->Text = newText;
 	});
 
-	processor->FileCreatedError += ref new Windows::Foundation::EventHandler<Platform::Exception^>([](Platform::Object^ sender, Platform::Exception^ e) {
+	block->Text = L"Success 0";
 
+	std::shared_ptr<int> exceptionCounter = std::make_shared<int>(0);
+	processor->FileCreatedError += ref new Windows::Foundation::EventHandler<Platform::Exception^>([exceptionCounter, exceptionBlock](Platform::Object^ sender, Platform::Exception^ e) {
+		int currentCount = ++(*exceptionCounter);
+		Platform::String^ newText = L"Exceptions " + currentCount;
+		exceptionBlock->Text = newText;
 	});
+
+	exceptionBlock->Text = L"Exceptions 0";
 }
 
 void TestFileHang::MainPage::Page_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)

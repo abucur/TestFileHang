@@ -8,13 +8,19 @@
     mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Start" x:Name="StartButton" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="StartButton_Click"/>
         <TextBlock x:Name="CountThread1" HorizontalAlignment="Left" Margin="10,47,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread2" HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread3" HorizontalAlignment="Left" Margin="10,97,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread4" HorizontalAlignment="Left" Margin="10,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread5" HorizontalAlignment="Left" Margin="10,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
         <TextBlock x:Name="CountThread6" HorizontalAlignment="Left" Margin="10,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="CountException1" HorizontalAlignment="Left" Margin="200,47,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException2" HorizontalAlignment="Left" Margin="200,72,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException3" HorizontalAlignment="Left" Margin="200,97,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException4" HorizontalAlignment="Left" Margin="200,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException5" HorizontalAlignment="Left" Margin="200,147,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="CountException6" HorizontalAlignment="Left" Margin="200,172,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

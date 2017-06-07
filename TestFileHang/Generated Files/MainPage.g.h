@@ -11,7 +11,6 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class Button;
                 ref class TextBlock;
             }
         }
@@ -33,13 +32,18 @@ namespace TestFileHang
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Button^ StartButton;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread1;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread2;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread3;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread4;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread5;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ CountThread6;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException1;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException2;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException3;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException4;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException5;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ CountException6;
     };
 }
 

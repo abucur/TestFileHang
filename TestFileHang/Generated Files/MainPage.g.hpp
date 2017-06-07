@@ -36,39 +36,62 @@ void ::TestFileHang::MainPage::Connect(int __connectionId, ::Platform::Object^ _
             break;
         case 2:
             {
-                this->StartButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->StartButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::TestFileHang::MainPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::StartButton_Click);
+                this->CountThread1 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 3:
             {
-                this->CountThread1 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountThread2 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 4:
             {
-                this->CountThread2 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountThread3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 5:
             {
-                this->CountThread3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountThread4 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 6:
             {
-                this->CountThread4 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountThread5 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 7:
             {
-                this->CountThread5 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountThread6 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 8:
             {
-                this->CountThread6 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->CountException1 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 9:
+            {
+                this->CountException2 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 10:
+            {
+                this->CountException3 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 11:
+            {
+                this->CountException4 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 12:
+            {
+                this->CountException5 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 13:
+            {
+                this->CountException6 = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
     }

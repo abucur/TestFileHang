@@ -19,13 +19,6 @@ FileProcessor::~FileProcessor()
 
 void FileProcessor::Start()
 {
-	// If the render loop is already running then do not start another thread.
-	if (m_worker != nullptr && m_worker->Status == Windows::Foundation::AsyncStatus::Started)
-	{
-		return;
-	}
-
-	// Create a task for rendering that will be run on a background thread.
 	auto workItemHandler = ref new Windows::System::Threading::WorkItemHandler([this](Windows::Foundation::IAsyncAction ^ action)
 	{
 		critical_section::scoped_lock lock(m_threadFence);
@@ -37,6 +30,8 @@ void FileProcessor::Start()
 					return create_task(file->OpenSequentialReadAsync()).then([](task<IInputStream^> dumbStreamTask) {
 						try {
 							auto dumbStream = dumbStreamTask.get();
+							// !!!! Uncomment to fix runtime broker hanging !!!!
+							// delete dumbStream;
 						}
 						catch (...) {
 							throw;

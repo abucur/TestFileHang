@@ -19,10 +19,9 @@ namespace TestFileHang
 		MainPage();
 
 	private:
-		void StartButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void Page_Loaded(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 
-		void BindProcessor(FileProcessor^ processor, Windows::UI::Xaml::Controls::TextBlock^ block);
+		void BindProcessor(FileProcessor^ processor, Windows::UI::Xaml::Controls::TextBlock^ block, Windows::UI::Xaml::Controls::TextBlock^ exceptionBlock);
 
 		FileProcessor^ m_processor1;
 		FileProcessor^ m_processor2;
